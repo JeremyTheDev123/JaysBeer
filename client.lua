@@ -6,8 +6,8 @@ end, false)
 ---Beer Code
 function beer()
 	if IsPedInAnyVehicle(GetPlayerPed(-1)) then -- Returns if the player is in any vehicle
-		DisplayNotification("Please leave the vehicle first.")
-		return false
+	DisplayNotification("Please leave the vehicle first.")
+	return false
 	end
 	TaskStartScenarioInPlace(GetPlayerPed(-1), "WORLD_HUMAN_PARTYING", 0, true)
 	Citizen.Wait(10000)
@@ -15,10 +15,10 @@ function beer()
 	drunk = true
 end
 	Citizen.CreateThread(function()
-		while true do
-			Citizen.Wait(0)
-			if drunk then
-			drunk = false
+	while true do
+	Citizen.Wait(0)
+	if drunk then
+	drunk = false
             Citizen.Wait(5000)
             DoScreenFadeOut(1000)
             Citizen.Wait(1000)
@@ -40,9 +40,9 @@ end
             SetPedIsDrunk(GetPlayerPed(-1), false)
             SetPedMotionBlur(GetPlayerPed(-1), false)
             DisplayNotification("You are sober now!")
-			end
-		end
-	end)
+	end
+    end
+end)
 
 ---Display notification code
 ---DisplayNotification("Test")
