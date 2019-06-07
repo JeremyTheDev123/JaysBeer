@@ -51,10 +51,3 @@ function DisplayNotification( text )
     AddTextComponentString( text )
     DrawNotification( false, false )
 end
----Animation code
-function playAnim(animDict, animName, duration)
-    RequestAnimDict(animDict)
-    while not HasAnimDictLoaded(animDict) do Citizen.Wait(0) end
-    TaskPlayAnim(PlayerPedId(), animDict, animName, 1.0, -1.0, duration, 49, 1, false, false, false)
-    RemoveAnimDict(animDict)
-end
