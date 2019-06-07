@@ -23,10 +23,12 @@ end
             DoScreenFadeOut(1000)
             Citizen.Wait(1000)
 			SetTimecycleModifier("spectator5")
-			DisplayNotification("Holy shit your drunk!")
             SetPedMotionBlur(GetPlayerPed(-1), true)
+            DisplayNotification("You are very drunk!")
             SetPedMovementClipset(GetPlayerPed(-1), "MOVE_M@DRUNK@SLIGHTLYDRUNK", true)
             SetPedIsDrunk(GetPlayerPed(-1), true)
+            SetPedAccuracy(GetPlayerPed(-1), 0)
+            DisplayNotification("You are very drunk!")
             DoScreenFadeIn(1000)            
             Citizen.Wait(600000) ---10 mins
             DoScreenFadeOut(1000)
